@@ -20,7 +20,7 @@ ref.createBtn.addEventListener('click', ClickCreate);
 ref.destroyBtn.addEventListener('click', ClickDestroy);
 
 function ClickCreate() {
-  destroyBoxes()
+  // destroyBoxes()
   createBoxes(Number(ref.input.value))
   }
 

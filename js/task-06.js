@@ -1,19 +1,22 @@
 
 const refInput = document.getElementById("validation-input");
 
-refInput.onblur = function () {
-    console.log('Количество введенных символов в input:', this.value.length);
+refInput.onblur = function (event) {
+    console.log('Количество введенных символов в input:', refInput.value.length);
 
-  if (this.getAttribute('data-length') > this.value.length) {
-    this.classList.remove('valid');
-    this.classList.add('invalid');
+  if (event.target.value.length === Number(refInput.dataset.length)) {
+    refInput.classList.add('valid');
+    if (refInput.classList.contains('invalid')) {
+refInput.classList.remove('invalid');
+    }
+    
   } else {
-    this.classList.remove('invalid');
-    this.classList.add('valid');
+    		if (refInput.classList.contains('valid')) {
+			refInput.classList.remove('valid')
+		}
+		refInput.classList.add('invalid')
   }
 };
-
-
 
 
 

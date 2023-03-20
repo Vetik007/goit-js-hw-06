@@ -8,4 +8,7 @@ const ref = {
 
 ref.textInput.addEventListener("input", (event) => {
     ref.output.textContent = event.currentTarget.value;
+    if (event.target.value.trim() === "") {
+ref.output.textContent = "Anonymous";
+    }
 });
